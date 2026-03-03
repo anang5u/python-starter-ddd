@@ -1,0 +1,6 @@
+database:
+  url: postgresql://user:pass@db:5432/prod
+  pool_size: 30
+
+observability:
+  slow_query_threshold: 0.2

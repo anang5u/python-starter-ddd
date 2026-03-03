@@ -1,0 +1,11 @@
+app:
+  name: fastapi-ddd
+  version: 1.0.0
+
+database:
+  pool_size: 10
+  max_overflow: 20
+
+observability:
+  slow_query_threshold: 0.3
+  enable_metrics: true
