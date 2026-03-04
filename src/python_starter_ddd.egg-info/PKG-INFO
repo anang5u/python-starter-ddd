@@ -1,7 +1,0 @@
-Metadata-Version: 2.4
-Name: python-starter-ddd
-Version: 0.1.0
-Summary: DDD starter
-Requires-Python: >=3.9
-License-File: LICENSE
-Dynamic: license-file
