@@ -1,14 +1,15 @@
 import logging
 import time
+
 from sqlalchemy import create_engine, event
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.engine import Engine
 from sqlalchemy.pool import StaticPool
+
 from infrastructure.config import settings
+from infrastructure.database.automigrate import run_automigrate
 
 logger = logging.getLogger(__name__)
-
-Base = declarative_base()
 
 _engine: Engine | None = None
 _SessionLocal: sessionmaker | None = None
@@ -78,6 +79,7 @@ def get_db():
         db.close()
 
 def get_db_test():
+
     engine = create_engine(
         "sqlite:///:memory:",
         connect_args={"check_same_thread": False},
@@ -85,7 +87,7 @@ def get_db_test():
     )
 
     setup_sql_debug(engine)
-    Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
+    run_automigrate(engine)
+    SessionLocal = sessionmaker(bind=engine)
 
-    return Session()
+    return SessionLocal()

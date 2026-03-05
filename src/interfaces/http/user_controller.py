@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from infrastructure.repositories.user_repository_impl import SQLAlchemyUserRepository
 from application.usecases.user_uc import UserUseCase
 from interfaces.http.schemas import CreateUserRequest
-from infrastructure.database import get_db
+from infrastructure.database.database import get_db
 
 router = APIRouter()
 

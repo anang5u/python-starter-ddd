@@ -1,4 +1,4 @@
-from infrastructure.database import get_db_test
+from infrastructure.database.database import get_db_test
 from infrastructure.repositories.user_repository_impl import SQLAlchemyUserRepository
 from domain.entities.user import User
 

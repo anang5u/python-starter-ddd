@@ -1,17 +1,8 @@
 from uuid import UUID
-from sqlalchemy import Column, String
 from sqlalchemy.orm import Session
-from infrastructure.database import Base
+from infrastructure.database.models.user_model import Base, UserModel
 from domain.entities.user import User
 from domain.repositories.user_repository import UserRepository
-
-class UserModel(Base):
-    __tablename__ = "users"
-
-    id = Column(String, primary_key=True)
-    name = Column(String)
-    email = Column(String)
-
 
 class SQLAlchemyUserRepository(UserRepository):
 

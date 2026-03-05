@@ -1,5 +1,5 @@
-from infrastructure.database import init_engine
-from infrastructure.database import get_session_factory
+from infrastructure.database.database import init_engine
+from infrastructure.database.database import get_session_factory
 
 
 def test_engine_creation(monkeypatch):

@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
 from interfaces.http.user_controller import router
-from infrastructure.database import init_engine, Base
+from infrastructure.database.database import init_engine, Base
 
 
 @asynccontextmanager
