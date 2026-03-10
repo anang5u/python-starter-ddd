@@ -1,8 +1,6 @@
 from uuid import UUID
-from sqlalchemy import Column, String, Integer, DateTime
-from sqlalchemy.sql import func
 from sqlalchemy.orm import Session
-from infrastructure.database.database import Base
+from infrastructure.database.models.indicator_model import IndicatorModel
 from domain.entities.indicator import Indicator
 from domain.repositories.indicator_repository import IndicatorRepository
 

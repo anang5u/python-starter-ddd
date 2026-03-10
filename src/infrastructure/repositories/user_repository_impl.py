@@ -1,6 +1,6 @@
 from uuid import UUID
 from sqlalchemy.orm import Session
-from infrastructure.database.models.user_model import Base, UserModel
+from infrastructure.database.models.user_model import UserModel
 from domain.entities.user import User
 from domain.repositories.user_repository import UserRepository
 
