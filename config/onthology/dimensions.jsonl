@@ -1,0 +1,3 @@
+{"label": "DIMENSION", "pattern": "Jenis Kelamin", "data": {"code": "gender", "name": "Jenis Kelamin", "desc": "Dimensi berdasarkan jenis kelamin"}}
+{"label": "DIMENSION", "pattern": "Kabupaten/Kota", "data": {"code": "bps_area", "name": "Kabupaten/Kota", "desc": "Dimensi wilayah administrasi kabupaten atau kota"}}
+{"label": "DIMENSION", "pattern": "Perangkat Daerah", "data": {"code": "opd", "name": "Perangkat Daerah", "desc": "Dimensi organisasi perangkat daerah"}}

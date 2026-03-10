@@ -1,0 +1,2 @@
+{"label": "DIMENSION", "pattern": "Pendidikan", "data": {"code": "pendidikan", "name": "Pendidikan", "desc": "Dimensi berdasarkan pendidikan"}}
+{"label": "DIMENSION", "pattern": "Jenis Pangan", "data": {"code": "jenis_pangan", "name": "Jenis Pangan", "desc": "Dimensi berdasarkan jenis pangan"}}

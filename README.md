@@ -64,4 +64,8 @@ $ pip install -e .
 
 # Tests
 $ pytest path/to/file.py::function_name
+
+# Spacy
+$ pip install -U spacy
+$ python -m spacy download id_core_news_lg
 ```
