@@ -1,0 +1,4 @@
+{"label": "MEASURE", "pattern": "Jumlah Penduduk", "data": {"code": "pop_count", "unit": "Orang", "desc": "Total cacah jiwa penduduk"}}
+{"label": "MEASURE", "pattern": "Persentase Kemiskinan", "data": {"code": "poverty_rate", "unit": "Persen", "desc": "Rata-rata tingkat kemiskinan"}}
+{"label": "MEASURE", "pattern": "Luas Panen", "data": {"code": "harvest_area", "unit": "Hektar", "desc": "Luas lahan yang telah dipanen"}}
+{"label": "MEASURE", "pattern": "Indeks Pembangunan Manusia", "data": {"code": "hdi_score", "unit": "Indeks", "desc": "Skor pencapaian kualitas hidup manusia"}}

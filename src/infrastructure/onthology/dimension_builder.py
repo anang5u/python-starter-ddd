@@ -1,32 +1,14 @@
-import spacy
 import uuid
 import re
 import json
 from typing import List
-from infrastructure.config.onthology.factory import load_dimension_patterns
+from infrastructure.config.onthology.factory import load_ontology_patterns
+from infrastructure.nlp.nlp_loader import nlp, ruler
 from domain.entities.dimension import Dimension
 
-# 1. Setup NLP Pipeline
-# nlp = spacy.load("id_core_news_lg")
-# ruler = nlp.add_pipe("entity_ruler", before="ner")
-# Membuat pipeline kosong bahasa Indonesia
-nlp = spacy.blank("id")
-
-# Menambahkan entity_ruler
-# ruler = nlp.add_pipe("entity_ruler")
-
-# Opsi B: Jika ingin tetap ada urutan dengan NER (harus buat ner dulu)
-nlp.add_pipe("ner")
-ruler = nlp.add_pipe("entity_ruler", before="ner")
-
-# 3. WAJIB: Inisialisasi pipeline
-# Ini akan menyiapkan komponen 'ner' agar siap digunakan meskipun masih kosong
-nlp.initialize()
-
-# 2. Load Patterns dan Mapping Metadata
-metadata_map, patterns = load_dimension_patterns()
-
-ruler.add_patterns(patterns)
+# Load Patterns dan Mapping Metadata
+dimension_meta, dimension_patterns = load_ontology_patterns("config/onthology/dimension.jsonl")
+ruler.add_patterns(dimension_patterns)
 
 def log_suggestion(name: str, log_file: str = "output/suggestion/dimensions.jsonl"):
     """Mencatat dimensi baru ke file log untuk kurasi manual."""
@@ -51,7 +33,7 @@ def identify_dimensions(title: str) -> List[Dimension]:
     doc = nlp(title)
     for ent in doc.ents:
         if ent.label_ == "DIMENSION":
-            meta = metadata_map.get(ent.text)
+            meta = dimension_meta.get(ent.text)
             if meta:
                 results.append(Dimension(
                     id=uuid.uuid4(),
